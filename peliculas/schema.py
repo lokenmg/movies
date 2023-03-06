@@ -55,7 +55,5 @@ class CreatePelicula(graphene.Mutation):
             servicio=pelicula.servicio
         )
 
-
-#4
 class Mutation(graphene.ObjectType):
     create_peliculas = CreatePelicula.Field()
