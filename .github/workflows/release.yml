@@ -25,3 +25,5 @@ jobs:
       run: lsb_release -a
     - name: show archives
       run: ls -la
+    - name: python version
+      run: python --version
