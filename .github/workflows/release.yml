@@ -27,5 +27,7 @@ jobs:
       run: ls -la
     - name: python version
       run: python --version
+    - name: install requirements
+      run: pip install -r requirements.txt
     #- name: runserver
      # run: python manage.py runserver --settings=settings.local
