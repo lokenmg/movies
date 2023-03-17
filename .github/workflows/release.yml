@@ -42,4 +42,5 @@ jobs:
         fail_on_empty: false
     - name: show .env file
       run: cat .env
-#vamo a ver que pasa
+    - name: run test
+      run: python manage.py runserver --settings=settings.setti
