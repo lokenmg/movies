@@ -43,4 +43,4 @@ jobs:
     - name: show .env file
       run: cat .env
     - name: run test
-      run: python manage.py runserver --settings=settings.setti
+      run: python manage.py runserver --settings=settings.local
