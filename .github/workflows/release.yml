@@ -29,5 +29,16 @@ jobs:
       run: python --version
     - name: install requirements
       run: pip install -r requirements.txt
-    #- name: runserver
-     # run: python manage.py runserver --settings=settings.local
+    - name: make .env 
+      uses: SpicyPizza/create-envfile@v1.3
+    - with:
+        envkey_TEST_SECRET_KEY : ${{ secrets.TEST_SECRET_KEY }}
+        envkey_TEST_DATABASE : ${{ secrets.TEST_DATABASE }}
+        envkey_TEST_USER : ${{ secrets.TEST_USER }}
+        envkey_TEST_PASSWORD : ${{ secrets.TEST_PASSWORD }}
+        envkey_TEST_HOST : ${{ secrets.TEST_HOST }}
+        envkey_TEST_PORT : ${{ secrets.TEST_PORT }}     
+        file_name: .env
+        fail_on_empty: false
+    - name: shoe .env file
+      run: cat .env
