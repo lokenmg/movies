@@ -57,3 +57,5 @@ class CreatePelicula(graphene.Mutation):
 
 class Mutation(graphene.ObjectType):
     create_peliculas = CreatePelicula.Field()
+
+schema = graphene.Schema(query=Query, mutation=Mutation)
