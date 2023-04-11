@@ -2,7 +2,7 @@ import graphene
 
 import peliculas.schema
 
-
+#j
 class Query(peliculas.schema.Query, graphene.ObjectType):
     pass
 
