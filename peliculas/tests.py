@@ -27,6 +27,32 @@ movies_QUERY = '''
  }
 '''
 
+CREATE_PELICULA_MUTATION='''
+  mutation createLinkMutation(
+    $nombre:      String, 
+    $duracion:    Int, 
+    $estudio:     String, 
+    $genero:      String, 
+    $productor:   String, 
+    $recaudacion: Float, 
+    $servicio:    String, 
+    $valoracion:  Int 
+    ){
+      createPeliculas(
+      duracion:    $duracion,
+      estudio:     $estudio,
+      genero:      $genero,
+      nombre:      $nombre,
+      productor:   $productor,
+      recaudacion: $recaudacion,
+      servicio:    $servicio,
+      valoracion:  $valoracion
+  ){
+    nombre
+  }
+}
+'''
+
 class MoviesTestCase(GraphQLTestCase):
     GRAPHQL_SCHEMA = schema
     def setUp(self):
@@ -42,3 +68,25 @@ class MoviesTestCase(GraphQLTestCase):
         print("query autos results")
         print(content)
         assert len(content['data']['peliculas']) ==2
+
+
+
+    def test_createPelicula_mutation(self):
+        response = self.query(
+            CREATE_PELICULA_MUTATION,
+            variables={'nombre': 'interestelar', 
+                       'duracion': 99, 
+                       'estudio': 'Warner Bros',
+                       'genero': 'ficcion',
+                       'productor': 'Christopher Nolan, Lynda Obst, Emma Thomas',
+                       'recaudacion': 100.4,
+                       'servicio': 'Netflix',
+                       'valoracion': 80
+                       }
+        )
+        print('mutation')
+        print(response)
+        content = json.loads(response.content)
+        print(content)
+        self.assertResponseNoErrors(response)
+        self.assertDictEqual({"createPeliculas": {"nombre": "interestelar"}}, content['data'])
