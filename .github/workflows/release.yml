@@ -1,6 +1,6 @@
 name: release CI/CD
 
-#Conrols when the action will run
+#Conrols when the action will ru
 on:
   push:
     branches: [release]
