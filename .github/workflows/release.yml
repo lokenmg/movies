@@ -53,4 +53,3 @@ jobs:
         with:
           name: lokenmg
           timeout: 5m
-
