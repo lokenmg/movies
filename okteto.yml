@@ -1,0 +1,12 @@
+build:
+ lokenmg:  # cambiar por su namespace de okteto
+   image: okteto.dev/lokenmg:latest  # cambiar por su namespace de okteto
+
+deploy:
+ - okteto build # build the image with the latest code
+ - kubectl apply -f manifests # create all the resources in kubernetes
+dev:
+ lokenmg:
+   command: bash
+   sync:
+   - .:/movies   # cambiar por su proyecto

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+ name: adsoftsito-config
+ labels:
+   app: postgres
+data:
+ PROD_SECRET_KEY: 'esta_caliente_y_no_hay_hielo'
+ PROD_DATABASE: 'xhfzaega'
+ PROD_USER: 'xhfzaega'
+ PROD_PASSWORD: 'ICYhxHYhlQDb6sjlpM8ONOzmNaX5_rQg'
+ PROD_HOST: 'mahmud.db.elephantsql.com'
+ PROD_PORT: "5432"
