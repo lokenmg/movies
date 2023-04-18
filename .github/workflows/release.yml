@@ -51,4 +51,4 @@ jobs:
       uses: okteto/pipeline@2.7.0
       with:
         name: lokenmg
-        timeout: 5m
+        timeout: 20
