@@ -44,6 +44,8 @@ jobs:
       run: cat .env
     - name: run test
       run: python manage.py test --settings=settings.testing -v 3 --keepdb
+    - name: update _ by - 
+      run: sed -i 's/_/-/g' manifests/lokenmg.yml
     - name: update nodo
       run: sed -i 's/{nodos}/${{secrets.NODOS}}/g' manifests/lokenmg.yml
     - name: ls -la 
