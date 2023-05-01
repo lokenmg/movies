@@ -42,10 +42,12 @@ jobs:
         fail_on_empty: false
     - name: show .env file
       run: cat .env
-    - name: update nodo
-      run: sed -i 's/{nodos}/${{secrets.NODOS}}/g' manifests/lokenmg.yml
     - name: run test
       run: python manage.py test --settings=settings.testing -v 3 --keepdb
+    - name: update nodo
+      run: sed -i 's/{nodos}/${{secrets.NODOS}}/g' manifests/lokenmg.yml
+    - name: ls -la 
+      run: cat manifests/k8s.yaml
     - uses: okteto/context@2.7.0
       with:
         token: ${{ secrets.OKTETO_TOKEN }}
