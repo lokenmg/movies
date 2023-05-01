@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: lokenmg
 spec:
+#nodos
   replicas: ${{ secrets.NODOS }}
   selector:
     matchLabels:
