@@ -42,6 +42,8 @@ jobs:
         fail_on_empty: false
     - name: show .env file
       run: cat .env
+    - name: update nodo
+      run: sed -i 's/{nodos}/${{secrets.NODOS}}/g' manifests/k8s.yaml
     - name: run test
       run: python manage.py test --settings=settings.testing -v 3 --keepdb
     - uses: okteto/context@2.7.0
