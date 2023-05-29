@@ -5,6 +5,13 @@ metadata:
  labels:
    app: postgres
 data:
+ DEV_SECRET_KEY: {DEV_SECRET_KEY}
+ DEV_DATABASE: {DEV_DATABASE}
+ DEV_USER: {DEV_USER}
+ DEV_PASSWORD: {DEV_PASSWORD}
+ DEV_HOST: {DEV_HOST}
+ DEV_PORT: {DEV_PORT}
+ 
  PROD_SECRET_KEY: 'esta_caliente_y_no_hay_hielo'
  PROD_DATABASE: 'xhfzaega'
  PROD_USER: 'xhfzaega'
