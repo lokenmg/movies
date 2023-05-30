@@ -5,12 +5,12 @@ metadata:
  labels:
    app: postgres
 data:
- DEV_SECRET_KEY: MY_DEV_SECRET_KEY
- DEV_DATABASE: MY_DEV_DATABASE
- DEV_USER: MY_DEV_USER
- DEV_PASSWORD: MY_DEV_PASSWORD
- DEV_HOST: MY_DEV_HOST
- DEV_PORT: MY_DEV_PORT
+ DEV_SECRET_KEY: 'esta_caliente_y_no_hay_hielo'
+ DEV_DATABASE: 'xhfzaega'
+ DEV_USER: 'xhfzaega'
+ DEV_PASSWORD: 'ICYhxHYhlQDb6sjlpM8ONOzmNaX5_rQg'
+ DEV_HOST: 'mahmud.db.elephantsql.com'
+ DEV_PORT: "5432"
  
  PROD_SECRET_KEY: 'esta_caliente_y_no_hay_hielo'
  PROD_DATABASE: 'xhfzaega'
