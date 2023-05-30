@@ -54,9 +54,9 @@ jobs:
     - name: update MY_DEV_PASSWORD
       run: sed -i 's/MY_DEV_PASSWORD/${{secrets.DEV_PASSWORD}}/g' manifests/lokenmg-configmap.yaml      
     - name: update MY_DEV_HOST 
-      run: sed -i 's/MY_DEV_HOST /${{secrets.DEV_HOST }}/g' manifests/lokenmg-configmap.yaml  
+      run: sed -i 's/MY_DEV_HOST/${{secrets.DEV_HOST}}/g' manifests/lokenmg-configmap.yaml  
     - name: update MY_DEV_PORT 
-      run: sed -i 's/MY_DEV_PORT /${{secrets.DEV_PORT }}/g' manifests/lokenmg-configmap.yaml      
+      run: sed -i 's/MY_DEV_PORT/${{secrets.DEV_PORT}}/g' manifests/lokenmg-configmap.yaml      
     - name: show config 
       run: cat manifests/lokenmg-configmap.yaml
       
